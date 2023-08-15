@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Upload CSV files</h2>
+
+<form id="myForm">
+  <label for="method">Method:</label><br>
+  <input type="text" id="method" name="method"><br>
+
+  <label for="radius">Radius:</label><br>
+  <input type="text" id="radius" name="radius"><br>
+
+  Select driver CSV file to upload:<br>
+  <input type="file" name="driver_info" id="driver_info"><br>
+
+  Select order CSV file to upload:<br>
+  <input type="file" name="order_info" id="order_info"><br>
+
+  <input type="button" value="Submit" name="submit" onclick="submitForm()">
+</form>
+
+<script>
+async function submitForm() {
+  const formData = new FormData(document.getElementById('myForm'));
+
+  const response = await fetch('http://47.243.58.57:5000/process_data', {
+    method: 'POST',
+    body: formData
+  });
+
+  const result = await response.text();
+
+  console.log(result);
+}
+</script>
+
+</body>
+</html>
