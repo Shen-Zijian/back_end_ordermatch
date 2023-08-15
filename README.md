@@ -20,7 +20,6 @@ The path of request is:
 ##### Headers
 
 | Name         | Value            |
-| ------------ | ---------------- |
 | Content-Type | application/json |
 
 ##### Body
@@ -28,13 +27,9 @@ The path of request is:
 The request body should contain two parameters and two CSV files, 
 
 | Name         | Value            |
-| ------------ | ---------------- |
 | method       | broadcasting/dispatch |
-| ------------ | ---------------- |
 | radius       | float |
-| ------------ | ---------------- |
 | driver_info  | CSV with columns[driver_id,longitude,latitude,region] |
-| ------------ | ---------------- |
 | order_info   |  CSV with columns[order_id,origin_lng,origin_lat,reward_units,order_region]  |
 
 
